@@ -1,3 +1,4 @@
+import Button from "./Button"
 
 export default function AddFriend () {
 
@@ -8,7 +9,7 @@ export default function AddFriend () {
                 <input type="text" />
                 <label htmlFor="">📷 Image URL</label>
                 <input type="text" />
-                <button className="button">Add</button>
+                <Button>Add friend</Button>
             </form>
                 <button className="button form-toggle">Close</button>
         </div>

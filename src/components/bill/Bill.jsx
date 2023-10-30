@@ -1,3 +1,4 @@
+import Button from "../friends/Button"
 
 export default function Bill () {
 
@@ -16,7 +17,7 @@ export default function Bill () {
                     <option value="you">You</option>
                     <option value="name">Name</option>
                 </select>
-                <button className="button">Split bill</button>
+                <Button>Split bill</Button>
             </form>
         </div>
     )

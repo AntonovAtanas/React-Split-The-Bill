@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 export default function Friend({ id, imageUrl, name, balance }) {
     let balanceMessage =
         balance === 0 ? (
@@ -17,7 +19,7 @@ export default function Friend({ id, imageUrl, name, balance }) {
             <img src={imageUrl} alt="name"></img>
             <h3>{name}</h3>
             {balanceMessage}
-            <button className="button">Select</button>
+            <Button>Select</Button>
         </li>
     );
 }
