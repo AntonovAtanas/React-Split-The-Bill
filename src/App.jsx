@@ -7,7 +7,7 @@ import Bill from './components/bill/Bill'
 function App() {
 
   return (
-    <div className='app'>
+    <div className="app">
       <FriendsList />
       <Bill />
       <AddFriend />
