@@ -11,7 +11,7 @@ export default function Bill () {
                 <label htmlFor="">👧 Your expense</label>
                 <input type="text" />
                 <label htmlFor="">👨‍👩‍👦 Name's expense</label>
-                <input type="text" />
+                <input type="text" disabled />
                 <label htmlFor="">🤑 Who is paying the bill?</label>
                 <select>
                     <option value="you">You</option>
