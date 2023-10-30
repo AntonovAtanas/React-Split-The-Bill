@@ -9,8 +9,8 @@ function App() {
   return (
     <div className='app'>
       <FriendsList />
-      <AddFriend />
       <Bill />
+      <AddFriend />
     </div>
   )
 }
