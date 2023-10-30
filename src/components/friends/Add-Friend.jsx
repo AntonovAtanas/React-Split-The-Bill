@@ -1,17 +1,21 @@
-import Button from "./Button"
+import { useState } from "react";
+import Button from "./Button";
 
-export default function AddFriend () {
+export default function AddFriend() {
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
         <div className="add-form-wrapper">
-            <form action="" className="form-add-friend">
-                <label htmlFor="">👩🏻‍🤝‍🧑🏼Friend name</label>
-                <input type="text" />
-                <label htmlFor="">📷 Image URL</label>
-                <input type="text" />
-                <Button>Add friend</Button>
-            </form>
-                <button className="button form-toggle">Close</button>
+            { isOpen &&
+                <form action="" className="form-add-friend">
+                    <label htmlFor="">👩🏻‍🤝‍🧑🏼Friend name</label>
+                    <input type="text" />
+                    <label htmlFor="">📷 Image URL</label>
+                    <input type="text" />
+                    <Button>Add friend</Button>
+                </form>
+            }
+            <button className="button form-toggle" onClick={() => setIsOpen((isOpen) => !isOpen)}>{isOpen ? 'Close' : 'Add friend'}</button>
         </div>
-    )
+    );
 }
