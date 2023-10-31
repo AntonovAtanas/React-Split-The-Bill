@@ -1,9 +1,10 @@
 import Button from "../friends/Button"
 
 export default function Bill ({friend}) {
-    console.log(friend)
     return (
-        <div>
+        <>
+        {friend.name &&
+            <div>
             <form action="" className="form-split-bill">
                 <h2>SPLIT A BILL WITH {friend.name}</h2>
                 <label htmlFor="">💰 Bill value</label>
@@ -20,5 +21,7 @@ export default function Bill ({friend}) {
                 <Button>Split bill</Button>
             </form>
         </div>
+        }
+        </>
     )
 }
