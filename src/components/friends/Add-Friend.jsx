@@ -7,8 +7,8 @@ export default function AddFriend() {
     return (
         <div className="add-form-wrapper">
             { isOpen &&
-                <form action="" className="form-add-friend">
-                    <label htmlFor="">👩🏻‍🤝‍🧑🏼Friend name</label>
+                <form action="" className="form-add-friend" onSubmit={() => console.log('dada')}>
+                    <label htmlFor=""> 👩🏻‍🤝‍🧑🏼Friend name</label>
                     <input type="text" />
                     <label htmlFor="">📷 Image URL</label>
                     <input type="text" />
