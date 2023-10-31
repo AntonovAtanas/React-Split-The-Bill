@@ -1,6 +1,6 @@
 import Friend from "./Friend";
 
-export default function FriendsList({allFriends}) {
+export default function FriendsList({allFriends, findFriend}) {
     return (
         <ul>
             {allFriends.map((fr) => (
@@ -10,6 +10,7 @@ export default function FriendsList({allFriends}) {
                     name={fr.name}
                     balance={fr.balance}
                     key={fr.id}
+                    findFriend={findFriend}
                 />
             ))}
         </ul>

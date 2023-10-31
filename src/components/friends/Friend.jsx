@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-export default function Friend({ id, imageUrl, name, balance }) {
+export default function Friend({ id, imageUrl, name, balance, findFriend }) {
     let balanceMessage =
         balance === 0 ? (
             <p>You and {name} are even</p>
@@ -19,7 +19,7 @@ export default function Friend({ id, imageUrl, name, balance }) {
             <img src={`${imageUrl}`} alt="name"></img>
             <h3>{name}</h3>
             {balanceMessage}
-            <Button>Select</Button>
+            <Button friendId={id} findFriend={findFriend}>Select</Button>
         </li>
     );
 }

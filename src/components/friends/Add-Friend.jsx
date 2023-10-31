@@ -1,9 +1,6 @@
-import { useState } from "react";
-
 import Button from "./Button";
 
-export default function AddFriend({onAddFriend, setFriendImage, setFriendName, friendName, friendImage}) {
-    const [isOpen, setIsOpen] = useState(false);
+export default function AddFriend({onAddFriend, setFriendImage, setFriendName, friendName, friendImage, isOpen, setIsOpen}) {
 
     return (
         <div className="add-form-wrapper">
