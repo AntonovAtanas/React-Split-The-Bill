@@ -1,17 +1,18 @@
 import { useState } from "react";
+
 import Button from "./Button";
 
-export default function AddFriend() {
+export default function AddFriend({onAddFriend, setFriendImage, setFriendName, friendName, friendImage}) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <div className="add-form-wrapper">
             { isOpen &&
-                <form action="" className="form-add-friend" onSubmit={() => console.log('dada')}>
+                <form className="form-add-friend" onSubmit={(e) => onAddFriend(e, friendName, friendImage)}>
                     <label htmlFor=""> 👩🏻‍🤝‍🧑🏼Friend name</label>
-                    <input type="text" />
+                    <input value={friendName} type="text" onChange={(e) => setFriendName(() => e.target.value)}/>
                     <label htmlFor="">📷 Image URL</label>
-                    <input type="text" />
+                    <input value={friendImage} type="text" onChange={(e) => setFriendImage(() => e.target.value)}/>
                     <Button>Add friend</Button>
                 </form>
             }

@@ -16,7 +16,7 @@ export default function Friend({ id, imageUrl, name, balance }) {
 
     return (
         <li key={id}>
-            <img src={imageUrl} alt="name"></img>
+            <img src={`${imageUrl}`} alt="name"></img>
             <h3>{name}</h3>
             {balanceMessage}
             <Button>Select</Button>
