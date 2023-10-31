@@ -1,7 +1,12 @@
-export default function Button({children, friendId, findFriend}) {
+export default function Button({children, friendId, findFriend, setIsSelected, isSelected}) {
+
+    function selectFriend() {
+        findFriend(friendId);
+        setIsSelected((selected) => !selected)
+    }
 
     if (friendId) {
-        return <button className="button" onClick={() => findFriend(friendId)}>{children}</button>
+        return <button className="button" onClick={() => selectFriend()}>{!isSelected ? 'Select' : 'Close'}</button>
     }
 
     return (

@@ -1,6 +1,6 @@
 import Friend from "./Friend";
 
-export default function FriendsList({allFriends, findFriend}) {
+export default function FriendsList({allFriends, findFriend, setIsSelected, isSelected}) {
     return (
         <ul>
             {allFriends.map((fr) => (
@@ -11,6 +11,8 @@ export default function FriendsList({allFriends, findFriend}) {
                     balance={fr.balance}
                     key={fr.id}
                     findFriend={findFriend}
+                    isSelected={isSelected} 
+                    setIsSelected={setIsSelected}
                 />
             ))}
         </ul>

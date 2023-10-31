@@ -14,6 +14,9 @@ function App() {
     const [friendName, setFriendName] = useState("");
     const [friendImage, setFriendImage] = useState("");
 
+    // bill form
+    const [isSelected, setIsSelected] = useState(false);
+
     function onAddFriend(e) {
         e.preventDefault();
         if (!friendName || !friendImage) return;
@@ -32,18 +35,23 @@ function App() {
         setFriendImage("");
 
         setIsOpen((isOpen) => !isOpen);
-    };
+    }
 
     function findFriend(id) {
-        const foundFriend = allFriends.find(friend => friend.id === id);
-        
+        const foundFriend = allFriends.find((friend) => friend.id === id);
+
         setFriend(() => foundFriend);
     }
 
     return (
         <div className="app">
             <div className="sidebar">
-                <FriendsList allFriends={allFriends} findFriend={findFriend} />
+                <FriendsList
+                    allFriends={allFriends}
+                    findFriend={findFriend}
+                    isSelected={isSelected}
+                    setIsSelected={setIsSelected}
+                />
                 <AddFriend
                     onAddFriend={onAddFriend}
                     isOpen={isOpen}
@@ -54,7 +62,7 @@ function App() {
                     setFriendImage={setFriendImage}
                 />
             </div>
-            <Bill friend={friend} />
+            <Bill friend={friend} isSelected={isSelected} />
         </div>
     );
 }

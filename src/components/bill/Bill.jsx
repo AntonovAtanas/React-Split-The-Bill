@@ -1,9 +1,9 @@
 import Button from "../friends/Button"
 
-export default function Bill ({friend}) {
+export default function Bill ({friend, isSelected}) {
     return (
         <>
-        {friend.name &&
+        {isSelected &&
             <div>
             <form action="" className="form-split-bill">
                 <h2>SPLIT A BILL WITH {friend.name}</h2>
