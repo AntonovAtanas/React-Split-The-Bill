@@ -23,7 +23,7 @@ export default function Friend({
         );
 
     return (
-        <li key={id}>
+        <li key={id} className={isSelected ? 'selected' : ''}>
             <img src={`${imageUrl}`} alt="name"></img>
             <h3>{name}</h3>
             {balanceMessage}

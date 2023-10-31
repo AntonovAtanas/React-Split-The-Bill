@@ -62,7 +62,7 @@ function App() {
                     setFriendImage={setFriendImage}
                 />
             </div>
-            <Bill friend={friend} isSelected={isSelected} />
+            <Bill friend={friend} setAllFriends={setAllFriends} isSelected={isSelected} />
         </div>
     );
 }
