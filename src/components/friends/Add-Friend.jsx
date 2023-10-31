@@ -8,7 +8,7 @@ export default function AddFriend({onAddFriend, setFriendImage, setFriendName, f
     return (
         <div className="add-form-wrapper">
             { isOpen &&
-                <form className="form-add-friend" onSubmit={(e) => onAddFriend(e, friendName, friendImage)}>
+                <form className="form-add-friend" onSubmit={onAddFriend}>
                     <label htmlFor=""> 👩🏻‍🤝‍🧑🏼Friend name</label>
                     <input value={friendName} type="text" onChange={(e) => setFriendName(() => e.target.value)}/>
                     <label htmlFor="">📷 Image URL</label>
