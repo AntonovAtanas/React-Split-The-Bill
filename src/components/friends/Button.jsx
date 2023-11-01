@@ -14,7 +14,6 @@ export default function Button({
         return (
             <button
                 className="button"
-                style={{ backgroundColor: "#ff922b" }}
                 onClick={() => selectFriend()}
             >
                 Select
