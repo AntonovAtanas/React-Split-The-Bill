@@ -39,7 +39,6 @@ function App() {
 
     function findFriend(id) {
         const foundFriend = allFriends.find((friend) => friend.id === id);
-
         setFriend(() => foundFriend);
     }
 

@@ -30,7 +30,6 @@ export default function Friend({
             <Button
                 friendId={id}
                 findFriend={findFriend}
-                isSelected={isSelected}
                 setIsSelected={setIsSelected}
             >
                 Select

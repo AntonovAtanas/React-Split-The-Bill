@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "../friends/Button";
 
 export default function Bill({ friend, isSelected, setAllFriends }) {
-    const [totalBill, setTotalBill] = useState("");
+    const [totalBill, setTotalBill] = useState(0);
     const [yourPay, setYourPay] = useState(0);
     const [friendPay, setFriendPay] = useState(0);
 
@@ -43,7 +43,7 @@ export default function Bill({ friend, isSelected, setAllFriends }) {
             });
         });
 
-        setTotalBill('')
+        setTotalBill(0)
         setYourPay(0);
         setFriendPay(0);
     }
