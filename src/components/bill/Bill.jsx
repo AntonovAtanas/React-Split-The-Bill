@@ -9,29 +9,6 @@ export default function Bill({ friend, isSelected, setAllFriends }) {
     const [whoPays, setWhoPays] = useState("you");
 
     function calcBill(paidMoney) {
-        // setAllFriends((allFriends) => {
-        //     return allFriends.map((currentFriend) => {
-        //         if (whoPays === "friend") {
-        //             if (currentFriend.id === friend.id) {
-        //                 return {
-        //                     ...currentFriend,
-        //                     balance: (currentFriend.balance -=
-        //                         Number(totalBill) - Number(paidMoney)),
-        //                 };
-        //             }
-        //             return currentFriend;
-        //         } else {
-        //             if (currentFriend.id === friend.id) {
-        //                 return {
-        //                     ...currentFriend,
-        //                     balance: (currentFriend.balance +=
-        //                         Number(totalBill) - Number(paidMoney)),
-        //                 };
-        //             }
-        //         }
-        //     });
-        // });
-
         if (whoPays == 'you') {
             setFriendPay(() => Number(totalBill) - Number(paidMoney));
             setYourPay(() => Number(paidMoney));
@@ -41,11 +18,41 @@ export default function Bill({ friend, isSelected, setAllFriends }) {
         }
     }
 
+    function setBill(e) {
+        e.preventDefault();
+
+        setAllFriends((allFriends) => {
+            return allFriends.map((currentFriend) => {
+                if (whoPays === "friend") {
+                    if (currentFriend.id === friend.id) {
+                        return {
+                            ...currentFriend,
+                            balance: (currentFriend.balance -= yourPay),
+                        };
+                    }
+                    return currentFriend;
+                } else {
+                    if (currentFriend.id === friend.id) {
+                        return {
+                            ...currentFriend,
+                            balance: (currentFriend.balance += friendPay),
+                        };
+                    }
+                    return currentFriend;
+                }
+            });
+        });
+
+        setTotalBill('')
+        setYourPay(0);
+        setFriendPay(0);
+    }
+
     return (
         <>
             {isSelected && (
                 <div>
-                    <form action="" className="form-split-bill">
+                    <form className="form-split-bill" onSubmit={setBill}>
                         <h2>SPLIT A BILL WITH {friend.name}</h2>
                         <label htmlFor="">💰 Bill value</label>
                         <input

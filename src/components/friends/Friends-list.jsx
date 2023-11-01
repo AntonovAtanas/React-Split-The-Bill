@@ -1,6 +1,7 @@
 import Friend from "./Friend";
 
 export default function FriendsList({allFriends, findFriend, setIsSelected, isSelected}) {
+    console.log(allFriends)
     return (
         <ul>
             {allFriends.map((fr) => (
